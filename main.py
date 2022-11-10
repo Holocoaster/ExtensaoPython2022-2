@@ -1,49 +1,37 @@
-' Permitir que o usuário digite algo '
+#Laços
 
-#comando de entrada
+'''contador = 1
+print(contador)
+contador = contador+1 
+print(contador)
+contador += 1
+print(contador)'''
 
-nome = input("Digite seu nome: ")
+#The variable counter (which equals to 1), will get +1 added to it, until it becomes <= 100, and that's when it stops
 
-idade = int(input("Digite a sua idade: "))
+counter = 1
 
-genero = input("Informe o gênero. M para Masculino; F para Feminino e O para Outros: ")
+while counter <= 100:
+  print(counter)
+  counter = counter +1
 
-#outras variáveis
+  animals = ["Raccoon", "Elephant", "Mammoth"]
 
-dobro = idade * 2
+print(animals)
 
-feminino = "F"
+#print(animals[index number]) for selecting and printing an specific order from the list of animals
 
-masculino = "M"
+print(len(animals)) #Will literally print the number of the list's length, which is currently 3
 
-outro = "O"
+#Adding a new item/animal that isn't in the list
+animals.append("Frog")
 
-#comando de saída
+print(animals)
 
-print("Seu nome é {}" .format(nome))
+print(len(animals)) #After adding Frog into the list, the new list length should be 4
 
-print("Sua idade é {}" .format(idade))
+i=0 #(i for index)
+while(i<len(animals)):
+  print(animals[i])
+  i = i + 1
 
-print("O dobro de sua idade é {}".format(dobro))
-
-#condicional
-
-if idade >= 18:
-  
-  print("Opa! você já é maior de idade!")
-
-else: 
-  print("Est xóven demais.")
-
-
-if idade >= 18 and genero == "M":
-  print("Você precisa prestar serviço militar obrigatório.")
-
-elif idade >=18 and genero == "F":
-  print("Sua prestação de serviço militar não é obrigatória.")
-          
-
-  
-
-
-  
