@@ -1,24 +1,25 @@
-   #Functions
+#Import library 
 
-#A segment to calculate 5% of the tax; keep it stored in the variable "tax", and display the result
-price = 2999.90
-tax = price *0.05
-print(tax)
+import sqlite3
 
+#Estabilish connection with the data base
 
-price2 = 100
-tax2 = price2 *0.05
-print(tax2)
+connection = sqlite3.connect("dc_universe.db")
 
-#Function creation that is supposed to calculate a 5% tax
+#Create a cursor type object
 
-def calculate_tax(product_price):
-  tax = product_price * 0.05
-  return tax
+cursor = connection.cursor()
 
-  #Data used to apply and start the function above, which will be displayed in the console
+#Data base command
 
-  price = 299
-  tax = calculate_tax(price)
-  print(tax)
-  
+sql = "SELECT pessoa_id, nome, nome_civil, tipo FROM pessoas"
+
+#Execute the sql command in SQLlite in cursor
+
+cursor.execute(sql)
+
+#Display all names in the data base 
+
+people = cursor.fetchall()
+for person in people: 
+ print (person)
