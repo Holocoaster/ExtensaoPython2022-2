@@ -1,25 +1,18 @@
 #Import library 
 
-import sqlite3
+import Aula4_DBFunction as Function
 
-#Estabilish connection with the data base
+connection, cursor = Function.connect()
 
-connection = sqlite3.connect("dc_universe.db")
+name = input("Insert the hero's/villain's name: ")
+alter_ego = input("Insert the alias: ")
+numeric_type = input("Type 1 for HERO and 2 for VILLAIN: ")
 
-#Create a cursor type object
+#Checks the max value within the list
 
-cursor = connection.cursor()
-
-#Data base command
-
-sql = "SELECT pessoa_id, nome, nome_civil, tipo FROM pessoas"
-
-#Execute the sql command in SQLlite in cursor
-
+sql = "SELECT MAX(pessoa_id) FROM pessoas"
 cursor.execute(sql)
+cursor.fetchone()
 
-#Display all names in the data base 
 
-people = cursor.fetchall()
-for person in people: 
- print (person)
+
